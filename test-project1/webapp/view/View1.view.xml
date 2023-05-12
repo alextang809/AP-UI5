@@ -3,7 +3,7 @@
     xmlns="sap.m" xmlns:f="sap.ui.layout.form">
     <Page id="page" title="{i18n>title}" backgroundDesign="Solid">
         <content>
-            <f:SimpleForm id="SimpleFormChange354"
+            <f:SimpleForm id="Sf1"
                 editable="true"
                 layout="ResponsiveGridLayout"
                 title="Address"
@@ -22,10 +22,10 @@
                 singleContainerFullSize="false">
                 <f:content>
                     <Label text="Emp ID" />
-                    <Input id="inputFieldID" placeholder="Enter Employee ID here" />
-                    
+                    <Input id="inputFieldID" type="Number" placeholder="Enter Employee ID here" />
+
                     <Label text="Name" />
-                    <Input id="inputFieldName" placeholder="Enter Name here" />
+                    <Input id="inputFieldName" type="Text" placeholder="Enter Name here" />
 
                     <Label text="Phone Number" />
                     <Input id="inputFieldPhone" placeholder="Enter Phone Number here" type="Tel" />
@@ -34,23 +34,31 @@
                     <Input id="inputFieldEmail" placeholder="Enter Email ID here" type="Email" />
                 </f:content>
             </f:SimpleForm>
-
-            <Button id="addButton" text="Add to table" press="onAddToTable" />
-
+            <HBox fitContainer="false" justifyContent="Center">
+                <Button id="AddData" text="Add Data" press="onAddToTable" type="Default"/>
+            </HBox>
             <Table id="table" items="{/items}">
                 <columns>
-                    <Column><Text text="Emp ID" /></Column>
-                    <Column><Text text="Name" /></Column>
-                    <Column><Text text="Phone Number" /></Column>
-                    <Column><Text text="Email ID" /></Column>
+                    <Column>
+                        <Text text="Emp ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Phone Number" />
+                    </Column>
+                    <Column>
+                        <Text text="Email ID" />
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem id="tableListItem">
                         <cells>
-                            <Text text="{empId}" />
-                            <Text text="{name}" />
-                            <Text text="{phone}" />
-                            <Text text="{email}" />
+                            <Text text="{sId}" />
+                            <Text text="{sName}" />
+                            <Text text="{sPhone}" />
+                            <Text text="{sEmail}" />
                         </cells>
                     </ColumnListItem>
                 </items>
