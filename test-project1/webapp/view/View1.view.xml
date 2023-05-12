@@ -22,21 +22,35 @@
                 singleContainerFullSize="false">
                 <f:content>
                     <Label text="Emp ID" />
-                    <Input id="inputField" width="50%" placeholder="Enter text here" />
-                    <Button id="addButton" text="Add to table" press="onAddToTable" />
+                    <Input id="inputFieldID" placeholder="Enter Employee ID here" />
+                    
+                    <Label text="Name" />
+                    <Input id="inputFieldName" placeholder="Enter Name here" />
+
+                    <Label text="Phone Number" />
+                    <Input id="inputFieldPhone" placeholder="Enter Phone Number here" type="Tel" />
+
+                    <Label text="Email ID" />
+                    <Input id="inputFieldEmail" placeholder="Enter Email ID here" type="Email" />
                 </f:content>
             </f:SimpleForm>
 
+            <Button id="addButton" text="Add to table" press="onAddToTable" />
+
             <Table id="table" items="{/items}">
                 <columns>
-                    <Column>
-                        <Text text="Content" />
-                    </Column>
+                    <Column><Text text="Emp ID" /></Column>
+                    <Column><Text text="Name" /></Column>
+                    <Column><Text text="Phone Number" /></Column>
+                    <Column><Text text="Email ID" /></Column>
                 </columns>
                 <items>
                     <ColumnListItem id="tableListItem">
                         <cells>
-                            <Text text="{text}" />
+                            <Text text="{empId}" />
+                            <Text text="{name}" />
+                            <Text text="{phone}" />
+                            <Text text="{email}" />
                         </cells>
                     </ColumnListItem>
                 </items>
