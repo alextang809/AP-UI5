@@ -1,7 +1,31 @@
-<mvc:View controllerName="project1.controller.View1"
+<!-- <mvc:View controllerName="project1.controller.View1"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
         <content />
     </Page>
+</mvc:View> -->
+
+<mvc:View controllerName="sap.ui.demo.todo.controller.App" 
+  xmlns="sap.m" 
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Page id="mainPage" title="Demo App">
+    <content>
+      <Input id="inputField" placeholder="Enter text here" />
+      <Button id="addButton" text="Add to table" press="onAddToTable" />
+      <Table id="table" items="{/}">
+        <columns>
+          <Column><Text text="Content" /></Column>
+        </columns>
+        <items>
+          <ColumnListItem id="tableListItem">
+            <cells>
+              <Text text="{text}" />
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+  </Page>
 </mvc:View>

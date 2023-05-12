@@ -1,0 +1,46 @@
+<mvc:View controllerName="testproject1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}" backgroundDesign="Solid">
+        <content>
+            <f:SimpleForm id="SimpleFormChange354"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                title="Address"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false">
+                <f:content>
+                    <Label text="Emp ID" />
+                    <Input id="inputField" width="50%" placeholder="Enter text here" />
+                    <Button id="addButton" text="Add to table" press="onAddToTable" />
+                </f:content>
+            </f:SimpleForm>
+
+            <Table id="table" items="{/items}">
+                <columns>
+                    <Column>
+                        <Text text="Content" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="tableListItem">
+                        <cells>
+                            <Text text="{text}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
